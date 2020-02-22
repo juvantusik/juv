@@ -1,0 +1,19 @@
+// @ts-check
+
+const smallestDivisor = (num) => {
+  // BEGIN (write your solution here)
+  const func = (digits, delitel) => {
+    if (digits === 1) {
+      return 1;
+    }
+    if (digits % delitel === 0) {
+      return delitel;
+    }
+    return func(digits, delitel + 1);
+  };
+  return func(num, 2);
+  // END
+};
+
+export default smallestDivisor;
+// console.log(smallestDivisor(29)); // для проверки
