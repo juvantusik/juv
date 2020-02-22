@@ -2,13 +2,13 @@
 // BEGIN (write your solution here)
 
 const finalGrade = (exam, project) => {
-  if ((exam > 90 && exam <= 100) || (project > 10)) {
+  if ((exam > 90) || (project > 10)) {
     return 100;
   }
-  if ((exam > 75 && exam <= 90) && (project >= 5 && project <= 10)) {
+  if ((exam > 75) && (project >= 5 && project <= 10)) {  // Кол-во баллов может быть и 95, но проектов будет больше 5, но меньше 10, т.к. если больше 10, то попадает на первое условие
     return 90;
   }
-  if ((exam > 50 && exam < 75) && (project >= 2 && project < 5)) {
+  if ((exam > 50) && (project >= 2 && project <= 10)) {  // Кол-во баллов может быть и 95, но проектов будет больше 2, но меньше 10, т.к. если больше 10, то попадает на первое условие
     return 75;
   }
   return 0;
