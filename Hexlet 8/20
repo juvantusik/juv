@@ -1,0 +1,15 @@
+const sequenceSum = (begin, end) => {
+  // BEGIN (write your solution here)
+  if (begin > end) {
+    return NaN;
+  }
+  if (begin === end) {
+    return begin; //можно написать end, но для логики, т.к. я делаю операции с begin надо писать begin
+  }
+  return begin + sequenceSum(begin + 1, end);
+  // END
+};
+
+export default sequenceSum;
+// https://prnt.sc/r68ivz
+// http://prntscr.com/r68mwq
