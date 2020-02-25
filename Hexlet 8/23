@@ -2,14 +2,14 @@
 
 const smallestDivisor = (num) => {
   // BEGIN (write your solution here)
-  const func = (digits, delitel) => {
+  const func = (digits, delitel) => {  //digits лишний аргумент, он как num.
     if (digits === 1) {
       return 1;
     }
-    if (digits % delitel === 0) {
+    if (digits % delitel === 0) {  //тут вместо digits можно было указать num т.к. мы внутри функции num и записать функцию иначе http://prntscr.com/r78aiy
       return delitel;
     }
-    return func(digits, delitel + 1);
+    return func(digits, delitel + 1); // тут тоже убрать digits
   };
   return func(num, 2);
   // END
