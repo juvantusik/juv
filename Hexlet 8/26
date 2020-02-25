@@ -1,0 +1,20 @@
+// @ts-check
+
+// BEGIN (write your solution here)
+const smallestDivisor = (n) => {
+  if (n < 1) {                       // если N меньше единицы, возвращает NaN
+    return NaN;
+  }
+  if (n === 1) {                     // если N = 1, возвращает 1
+    return 1;
+  }
+  let div = 2;                       // назначим переменную от 2, т.к. это наименьший интересующий нас делитель
+
+  while (n % div !== 0) {            // пока остаток от деления НЕ будет равен нулю, выполняет следующую строчку
+    div = div + 1;                   // прибавлять к делителю 1
+  }
+  return div;                        // когда будет выполнени условие и n % div === 0 возвращает значение делителя, как ответ
+};
+// END
+console.log(smallestDivisor(4));
+export default smallestDivisor;
