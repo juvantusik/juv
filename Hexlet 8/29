@@ -1,0 +1,22 @@
+Реализуйте функцию reverse, которая переворачивает строку. Например:
+
+reverse('hello, world!'); // !dlrow ,olleh
+Подсказки
+Длина строки str находится так: str.length
+Не забудьте: индексы начинаются с 0, но длина — это реальная длина. Так что индекс последнего символа не совпадает с длиной строки
+
+// @ts-check
+// BEGIN (write your solution here)
+const reverse = (str) => {
+  let i = str.length;
+  let result = '';
+  while (i !== 0) {
+    result = result + str[i - 1];
+    i = i - 1;
+  }
+  return result;
+};
+console.log(reverse('hello, world!')
+// END
+
+export default reverse;
