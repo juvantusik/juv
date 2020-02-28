@@ -1,0 +1,40 @@
+В файле myMathModule.js:
+
+1. Создайте функцию getTriangleArea, которая принимает два аргумента h и b и вычисляет площадь треугольника 
+по формуле A = 1/2 * h * b, где h — высота, а b — основание треугольника.
+2. Экспортируйте функцию.
+
+В файле solution.js:
+
+1. Импортируйте getTriangleArea из модуля myMathModule.
+2. Создайте функцию, которая принимает аргумент n и возвращает площадь треугольника высотой n и основанием n2/2. 
+Используйте функцию square (принимает число и возвращает его квадрат).
+3. Экспортируйте созданную функцию по умолчанию.
+
+myMathModule.js
+
+// @ts-check
+
+export const getTrianglePerimeter = (a, b, c) => a + b + c;
+
+// BEGIN (write your solution here)
+export const getTriangleArea = (h, b) => {
+  return (h * b) / 2;
+};
+console.log(getTriangleArea(15, 12))
+// END
+
+solution.js
+
+// @ts-check
+
+import square from './square.js';
+
+// BEGIN (write your solution here)
+import { getTriangleArea } from './myMathModule';
+const wtf = (n) => {
+return (n * (square(n) / 2)) / 2; //для square надо указывать аргумент, т.к. это экспортируемая функция, зависящая от аргумента
+};
+
+export default wtf;
+// END
