@@ -1,0 +1,23 @@
+Реализуйте функцию square, которая возвращает квадрат числа.
+Реализуйте функцию sumOfSquares, которая возвращает сумму квадратов двух чисел.
+Реализуйте функцию squareSumOfSquares, которая возвращает квадрат суммы квадратов двух чисел.
+
+Обратите внимание на то, что самостоятельно вызывать их не надо. Это делает проверяющая система в файле __tests__/squares.tests.js
+
+Подсказки
+Функция square может быть использована внутри sumOfSquares
+Функция sumOfSquares может быть использована внутри squareSumOfSquares
+
+// BEGIN (write your solution here)
+const square = (x) => x * x;
+
+const sumOfSquares = (x, y) => square(x) + square(y);
+
+const squareSumOfSquares = (x, y) => square(sumOfSquares(x, y));
+// END
+
+export {
+  square,
+  sumOfSquares,
+  squareSumOfSquares,
+};
