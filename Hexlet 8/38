@@ -19,12 +19,13 @@ export const getTrianglePerimeter = (a, b, c) => a + b + c;
 
 // BEGIN (write your solution here)
 export const getTriangleArea = (h, b) => {
-  return (h * b) / 2;
+  const areaone = (h * b) / 2;
+  return areaone;
 };
-console.log(getTriangleArea(15, 12))
+
 // END
 
-solution.js
+solution.js v1 - работает, но не совсем верно, т.к. импортированная функция getTriangleArea не используется. Лучше 2 вариант
 
 // @ts-check
 
@@ -38,3 +39,18 @@ return (n * (square(n) / 2)) / 2; //для square надо указывать а
 
 export default wtf;
 // END
+
+solution.js v1
+
+// @ts-check
+
+import square from './square.js';
+
+// BEGIN (write your solution here)
+import { getTriangleArea } from './myMathModule';
+
+const areatwo = (n) => getTriangleArea(n, square(n) / 2); //использует метод подсчета из импортированной getTriangleArea, но вкладывает туда другие аргументы, из задания
+
+export default areatwo;
+// END
+
