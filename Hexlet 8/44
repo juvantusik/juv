@@ -28,18 +28,18 @@ import { length, toUpperCase } from './strings';
 
 const bigLettersCount = (str) => {
   // BEGIN (write your solution here)
-let i = 0;
-for (let counter = 0; counter <= length(str); counter ++) {
-  if (toUpperCase(str[i]) === str[i]) {
-    i ++; 
+  let result = 0;
+  for (let i = 0; i < (length(str) - 1); i += 1) {
+    // console.log(i);
+    // console.log(toUpperCase(str[i]));
+    if (toUpperCase(str[i]) === str[i]) {
+     result += 1;
+    }
+     return result;
   }
-return i;  
-}
-return result;
-console.log(bigLettersCount(JoPa));
   // END
 };
-
+console.log(bigLettersCount('Jo Pa'));
 
 const compare = (first, second) => {
   const firstCount = bigLettersCount(first);
