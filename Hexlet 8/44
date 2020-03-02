@@ -28,18 +28,17 @@ import { length, toUpperCase } from './strings';
 
 const bigLettersCount = (str) => {
   // BEGIN (write your solution here)
-  let result = 0;
-  for (let i = 0; i < (length(str) - 1); i += 1) {
-    // console.log(i);
-    // console.log(toUpperCase(str[i]));
-    if (toUpperCase(str[i]) === str[i]) {
-     result += 1;
+  let result = 0; // поначалу результат 0, т.к. еще не подсчитали
+  for (let i = 0; i < length(str); i += 1) { // берем i = 0, при индексе букв в слове, первая это нулевая. ; пока i меньше, чем кол-во букв в слове (а кол-во букв считается от 1); прибавляем + 1 после выполнения IF
+    if (toUpperCase(str[i]) === str[i]) { // ТУТ БЕРЕТСЯ БУКВА И ДЕЛАЕТСЯ БОЛЬШОЙ. ЗАТЕМ СРАВНИВАЕТСЯ С ЕЕ ПЕРВОНАЧАЛЬНЫМ ЗНАЧЕНИЕМ. Т.Е. ЕСЛИ НУЛЕВАЯ БУКВА СДЕЛАННАЯ БОЛЬШОЙ === ПЕРВАЯ БУКВА БОЛЬШАЯ ИЗНАЧАЛЬНО, ТО
+      result += 1; // В РЕЗУЛЬТАТ ДОБАВЛЯЕМ ЕДИНИЦУ
     }
-     return result;
+    // return result; // ЭТО НЕ ПРАВИЛЬНОЕ МЕСТО RESULT, Т.К. ЗНАЧЕНИЕ ВСЕГДА БУДЕТ 1
   }
+  return result; // ЭТО ПРАВИЛЬНОЕ ПОЛОЖЕНИЕ RESULT, ОН ВЕРНЕТ ИТОГОВОЕ ЗНАЧЕНИЕ ПОСЛЕ ВЫПОЛНЕНИЯ ЦИКЛА FOR
   // END
 };
-console.log(bigLettersCount('Jo Pa'));
+console.log(bigLettersCount('ADASAS'));
 
 const compare = (first, second) => {
   const firstCount = bigLettersCount(first);
