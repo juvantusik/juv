@@ -9,9 +9,10 @@ import { length, toUpperCase } from './strings';
 
 // BEGIN (write your solution here)
 const doBigLetter = (str) => {
-  let result = '';
-  for (let i = 0; i < length(str); i += 1) {
-    result += (str[i - 1] === ' ' || i === 0) ? toUpperCase(str[i]) : str[i];
+  let result = ''; // берем пустую строку, чтобы записывать результат в нее
+  for (let i = 0; i < length(str); i += 1) { // обычный счетчик
+    result += (str[i - 1] === ' ' || i === 0) ? toUpperCase(str[i]) : str[i]; // а вот тут самое интересное. Результат, с проверкой (если предыдущий символ от взятого - пробел или символ нулевой) то делаем его большим
+    // и добавляет символ в result, либо не делаем его большим и также добавляем в result
   }
   return result;
 };
